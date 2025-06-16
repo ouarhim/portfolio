@@ -6,7 +6,6 @@ import MediaModal from './MediaModal';
 const mediaContext = require.context('../branding', false, /\.(png|jpe?g|gif|mp4|webm)$/);
 const mediaFiles = mediaContext.keys().map((key) => ({
   src: mediaContext(key),
-  name: key.replace(/^\.\//, '').replace(/\.[^/.]+$/, ''),
   type: key.match(/\.(mp4|webm)$/) ? 'video' : 'image',
 }));
 
@@ -35,8 +34,9 @@ const Branding = () => {
               {file.type === 'image' ? (
                 <img src={file.src} alt="" className="w-full max-w-full h-64 object-cover rounded mb-2" />
               ) : (
-                <video src={file.src} className="w-full max-w-full h-64 object-cover mb-0" />
+                <video src={file.src} className="w-full max-w-full h-64 object-cover rounded mb-2" />
               )}
+              <p className="text-lg font-body text-white mt-2">{file.name}</p>
             </div>
           ))}
         </div>
