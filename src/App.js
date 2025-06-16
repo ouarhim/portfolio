@@ -17,11 +17,11 @@ function App() {
       <Hero />
       <Branding />
       <Packaging />
-      <BookCover />
-      <Poster />
-      <MerchandiseDesign />
-      <WebDesign />
-      <Contact />
+      {/* <BookCover /> */}
+      {/* <Poster /> */}
+      {/* <MerchandiseDesign /> */}
+      {/* <WebDesign /> */}
+      {/* <Contact /> */}
     </div>
   );
 }
