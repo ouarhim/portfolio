@@ -15,13 +15,25 @@ function App() {
     <div className="App">
       <Navbar />
       <Hero />
-      <Branding />
-      <Packaging />
-      <BookCover />
-      <Poster />
-      <MerchandiseDesign />
-      <WebDesign />
-      <Contact />
+      <div className="m-3">
+        <Branding />
+      </div>
+      <div className="m-3">
+        <Packaging />
+      </div>
+      <div className="m-3">
+        <BookCover />
+      </div>
+      <div className="m-3">
+        <Poster />
+      </div>
+      <div className="m-3">
+        <MerchandiseDesign />
+      </div>
+      <div className="m-3">
+        <WebDesign />
+      </div>
+        <Contact />
     </div>
   );
 }
