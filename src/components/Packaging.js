@@ -18,7 +18,7 @@ const Packaging = () => {
   return (
     <>
       {/* Mobile View */}
-      <div id="packaging" className="sm:hidden">
+      <div id="mobile-packaging" className="sm:hidden">
         <MobileMediaGallery
           mediaFiles={mediaFiles}
           title="Packaging"

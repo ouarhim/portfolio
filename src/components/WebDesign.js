@@ -18,7 +18,7 @@ const WebDesign = () => {
   return (
     <>
       {/* Mobile View */}
-      <div id="web-design" className="sm:hidden">
+      <div id="mobile-web-design" className="sm:hidden">
         <MobileMediaGallery
           mediaFiles={mediaFiles}
           title="Web Design"

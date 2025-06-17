@@ -18,7 +18,7 @@ const Poster = () => {
   return (
     <>
       {/* Mobile View */}
-      <div id="poster" className="sm:hidden">
+      <div id="mobile-poster" className="sm:hidden">
         <MobileMediaGallery
           mediaFiles={mediaFiles}
           title="Poster Design"

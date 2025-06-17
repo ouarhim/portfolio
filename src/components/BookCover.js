@@ -18,7 +18,7 @@ const BookCover = () => {
   return (
     <>
       {/* Mobile View */}
-      <div id="book-cover" className="sm:hidden">
+      <div id="mobile-book-cover" className="sm:hidden">
         <MobileMediaGallery
           mediaFiles={mediaFiles}
           title="Cover Design"
