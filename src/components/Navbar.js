@@ -1,9 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('title');
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -11,6 +24,14 @@ const Navbar = () => {
 
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
+  };
+
+  const handleSetActive = (to) => {
+    setActiveSection(to);
+  };
+
+  const getTargetId = (baseId) => {
+    return isMobile ? `mobile-${baseId}` : baseId;
   };
 
   return (
@@ -22,6 +43,7 @@ const Navbar = () => {
           duration={500} 
           spy={true}
           activeClass="text-purple-400"
+          onSetActive={handleSetActive}
           className="text-xl font-bold cursor-pointer hover:text-purple-400 transition-colors"
         >
           Portfolio
@@ -30,61 +52,67 @@ const Navbar = () => {
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-4">
           <Link 
-            to="branding" 
+            to={getTargetId('branding')} 
             smooth={true} 
             duration={500} 
             spy={true}
             activeClass="text-purple-400"
+            onSetActive={handleSetActive}
             className="font-bold cursor-pointer hover:text-purple-400 transition-colors"
           >
             Branding
           </Link>
           <Link 
-            to="packaging" 
+            to={getTargetId('packaging')} 
             smooth={true} 
             duration={500} 
             spy={true}
             activeClass="text-purple-400"
+            onSetActive={handleSetActive}
             className="font-bold cursor-pointer hover:text-purple-400 transition-colors"
           >
             Packaging
           </Link>
           <Link 
-            to="book-cover" 
+            to={getTargetId('book-cover')} 
             smooth={true} 
             duration={500} 
             spy={true}
             activeClass="text-purple-400"
+            onSetActive={handleSetActive}
             className="font-bold cursor-pointer hover:text-purple-400 transition-colors"
           >
             Cover Design
           </Link>
           <Link 
-            to="poster" 
+            to={getTargetId('poster')} 
             smooth={true} 
             duration={500} 
             spy={true}
             activeClass="text-purple-400"
+            onSetActive={handleSetActive}
             className="font-bold cursor-pointer hover:text-purple-400 transition-colors"
           >
             Poster
           </Link>
           <Link 
-            to="merchandise-design" 
+            to={getTargetId('merchandise-design')} 
             smooth={true} 
             duration={500} 
             spy={true}
             activeClass="text-purple-400"
+            onSetActive={handleSetActive}
             className="font-bold cursor-pointer hover:text-purple-400 transition-colors"
           >
             Merchandise Design
           </Link>
           <Link 
-            to="web-design" 
+            to={getTargetId('web-design')} 
             smooth={true} 
             duration={500} 
             spy={true}
             activeClass="text-purple-400"
+            onSetActive={handleSetActive}
             className="font-bold cursor-pointer hover:text-purple-400 transition-colors"
           >
             Web Design
@@ -95,6 +123,7 @@ const Navbar = () => {
             duration={500} 
             spy={true}
             activeClass="text-purple-400"
+            onSetActive={handleSetActive}
             className="font-bold cursor-pointer hover:text-purple-400 transition-colors"
           >
             Contact
@@ -123,6 +152,7 @@ const Navbar = () => {
               duration={500} 
               spy={true}
               activeClass="text-purple-400"
+              onSetActive={handleSetActive}
               className="cursor-pointer hover:text-purple-400 transition-colors" 
               onClick={closeMobileMenu}
             >
@@ -131,11 +161,12 @@ const Navbar = () => {
           </li>
           <li>
             <Link 
-              to="branding" 
+              to="mobile-branding" 
               smooth={true} 
               duration={500} 
               spy={true}
               activeClass="text-purple-400"
+              onSetActive={handleSetActive}
               className="cursor-pointer hover:text-purple-400 transition-colors" 
               onClick={closeMobileMenu}
             >
@@ -144,11 +175,12 @@ const Navbar = () => {
           </li>
           <li>
             <Link 
-              to="packaging" 
+              to="mobile-packaging" 
               smooth={true} 
               duration={500} 
               spy={true}
               activeClass="text-purple-400"
+              onSetActive={handleSetActive}
               className="cursor-pointer hover:text-purple-400 transition-colors" 
               onClick={closeMobileMenu}
             >
@@ -157,11 +189,12 @@ const Navbar = () => {
           </li>
           <li>
             <Link 
-              to="book-cover" 
+              to="mobile-book-cover" 
               smooth={true} 
               duration={500} 
               spy={true}
               activeClass="text-purple-400"
+              onSetActive={handleSetActive}
               className="cursor-pointer hover:text-purple-400 transition-colors" 
               onClick={closeMobileMenu}
             >
@@ -170,11 +203,12 @@ const Navbar = () => {
           </li>
           <li>
             <Link 
-              to="poster" 
+              to="mobile-poster" 
               smooth={true} 
               duration={500} 
               spy={true}
               activeClass="text-purple-400"
+              onSetActive={handleSetActive}
               className="cursor-pointer hover:text-purple-400 transition-colors" 
               onClick={closeMobileMenu}
             >
@@ -183,11 +217,12 @@ const Navbar = () => {
           </li>
           <li>
             <Link 
-              to="merchandise-design" 
+              to="mobile-merchandise-design" 
               smooth={true} 
               duration={500} 
               spy={true}
               activeClass="text-purple-400"
+              onSetActive={handleSetActive}
               className="cursor-pointer hover:text-purple-400 transition-colors" 
               onClick={closeMobileMenu}
             >
@@ -196,11 +231,12 @@ const Navbar = () => {
           </li>
           <li>
             <Link 
-              to="web-design" 
+              to="mobile-web-design" 
               smooth={true} 
               duration={500} 
               spy={true}
               activeClass="text-purple-400"
+              onSetActive={handleSetActive}
               className="cursor-pointer hover:text-purple-400 transition-colors" 
               onClick={closeMobileMenu}
             >
@@ -214,6 +250,7 @@ const Navbar = () => {
               duration={500} 
               spy={true}
               activeClass="text-purple-400"
+              onSetActive={handleSetActive}
               className="cursor-pointer hover:text-purple-400 transition-colors" 
               onClick={closeMobileMenu}
             >
