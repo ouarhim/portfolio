@@ -4,7 +4,6 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('title');
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -26,9 +25,7 @@ const Navbar = () => {
     setIsMobileMenuOpen(false);
   };
 
-  const handleSetActive = (to) => {
-    setActiveSection(to);
-  };
+  const handleSetActive = () => {}
 
   const getTargetId = (baseId) => {
     return isMobile ? `mobile-${baseId}` : baseId;
@@ -96,7 +93,7 @@ const Navbar = () => {
             Poster
           </Link>
           <Link 
-            to={getTargetId('merchandise-design')} 
+            to={getTargetId('merchandisedesign')} 
             smooth={true} 
             duration={500} 
             spy={true}
@@ -107,7 +104,7 @@ const Navbar = () => {
             Merchandise Design
           </Link>
           <Link 
-            to={getTargetId('web-design')} 
+            to={getTargetId('webdesign')} 
             smooth={true} 
             duration={500} 
             spy={true}
@@ -217,7 +214,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link 
-              to="mobile-merchandise-design" 
+              to="mobile-merchandisedesign" 
               smooth={true} 
               duration={500} 
               spy={true}
@@ -231,7 +228,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link 
-              to="mobile-web-design" 
+              to="mobile-webdesign" 
               smooth={true} 
               duration={500} 
               spy={true}

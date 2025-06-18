@@ -9,7 +9,7 @@ module.exports = {
         'neon-purple': '0 0 5px #a78bfa, 0 0 20px #a78bfa, 0 0 40px #a78bfa, 0 0 80px #a78bfa',
       },
       fontFamily: {
-        'title': ['Boldonse', 'Specimen'],
+        'title': ['Roboto', 'sans-serif'],
         'body': ['Roboto', 'sans-serif'],
       }
     },
