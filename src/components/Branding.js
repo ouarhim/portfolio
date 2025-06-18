@@ -44,7 +44,7 @@ const Branding = () => {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl font-title font-bold mb-8 text-center">Branding</h2>
+          <h2 className="text-8xl font-title font-bold mb-20 text-center">Branding</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
             {mediaFiles.map((file, idx) => (
               <motion.div

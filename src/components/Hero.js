@@ -14,9 +14,9 @@ const Hero = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 font-title">Graphic Designer & Web Developer</h1>
-        <div className="container mx-auto px-4">
-          <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 leading-relaxed">
+        <h1 className="text-3xl sm:text-4xl md:text-8xl font-bold mb-8 sm:mb-8 font-title">Graphic Designer & Web Developer</h1>
+        <div className="container mx-auto px-4 md:px-8 lg:px-16">
+          <p className="text-base sm:text-lg md:text-2xl mb-6 mt-20 sm:mb-8 leading-relaxed">
             My name Ilyas live in Morroco multidisciplinary designer blending tradition with innovation. With a background in graphic design, illustration, and web development, I craft powerful visual identities, functional web experiences, and print-ready designs rooted in culture and storytelling. From logo creation and T-shirt graphics to full-stack portfolio sites and Excel-based business systems, I bring creative problem-solving and technical skill together. Fluent in English, French, and Arabic, I collaborate across cultures always learning, always evolving.
           </p>
         </div>
@@ -24,7 +24,7 @@ const Hero = () => {
           to="contact" 
           smooth={true} 
           duration={500} 
-          className="inline-block bg-white text-black px-6 py-3 rounded-full font-bold hover:bg-gray-200 transition cursor-pointer text-sm sm:text-base"
+          className="inline-block bg-white text-black px-6 py-3 rounded-full mt-20 font-bold hover:bg-gray-200 transition cursor-pointer text-sm sm:text-base md:px-8 md:py-4 md:text-lg"
         >
           Contact Me
         </Link>
